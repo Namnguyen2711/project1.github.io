@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+  <section>
+     <div class="present">
+     <img src="music/present.png" alt="present" style="--y:2;" />
+     <img src="music/present.png" alt="present" style="--y:1;" />
+     <img src="music/present.png" alt="present" style="--y:4;" />
+     <img src="music/present.png" alt="present" style="--y:3;" />
+     <img src="music/present.png" alt="present" style="--y:8;" />
+     <img src="music/present.png" alt="present" style="--y:5;" />
+     <img src="music/present.png" alt="present" style="--y:7;" />
+     <img src="music/present.png" alt="present" style="--y:6;" />
+     <img src="music/present.png" alt="present" style="--y:10;" />
+     <img src="music/present.png" alt="present" style="--y:9;" />
+
+     <img src="music/present.png" alt="present" style="--y:2;" />
+     <img src="music/present.png" alt="present" style="--y:1;" />
+     <img src="music/present.png" alt="present" style="--y:4;" />
+     <img src="music/present.png" alt="present" style="--y:3;" />
+     <img src="music/present.png" alt="present" style="--y:8;" />
+     <img src="music/present.png" alt="present" style="--y:5;" />
+     <img src="music/present.png" alt="present" style="--y:7;" />
+     <img src="music/present.png" alt="present" style="--y:6;" />
+     <img src="music/present.png" alt="present" style="--y:10;" />
+     <img src="music/present.png" alt="present" style="--y:9;" />
+
+     <img src="music/present.png" alt="present" style="--y:2;" />
+     <img src="music/present.png" alt="present" style="--y:1;" />
+     <img src="music/present.png" alt="present" style="--y:4;" />
+     <img src="music/present.png" alt="present" style="--y:3;" />
+     <img src="music/present.png" alt="present" style="--y:8;" />
+     <img src="music/present.png" alt="present" style="--y:5;" />
+     <img src="music/present.png" alt="present" style="--y:7;" />
+     <img src="music/present.png" alt="present" style="--y:6;" />
+     <img src="music/present.png" alt="present" style="--y:10;" />
+     <img src="music/present.png" alt="present" style="--y:9;" />
+    </div>
+    <div id="marquee_w">
+        <div class="marquee">
+            <span >Happy Birthday Thu Hà  Sinh Nhật vui vẻ ^^&nbsp;&nbsp;&nbsp;</span>
+        </div>
+        <div class="marquee marquee2">
+            <span >Happy Birthday Thu Hà  Sinh Nhật vui vẻ ^^&nbsp;&nbsp;&nbsp;</span>
+        </div>
+    </div>
+    <button id="change" type="button" class="button" onclick="myfunction(1)">click</button>
+     <div class="audio">
+        <audio controls autoplay loop >
+            <source src="music/Happy Birthday To You.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+  </section>
+  <div id="pic">
+    <span style="--a:1;"><img src="/music/pic1.png"></span>
+    <span style="--a:2;"><img src="/music/pic2.png"></span>
+    <span style="--a:3;"><img src="/music/pic3.png"></span>
+    <span style="--a:4;"><img src="/music/pic4.png"></span>
+    <span style="--a:5;"><img src="/music/pic5.png"></span>
+    <span style="--a:6;"><img src="/music/pic6.png"></span>
+    <span style="--a:7;"><img src="/music/pic7.png"></span>
+    <span style="--a:8;"><img src="/music/pic8.png"></span>
+</div>
+  <script>
+      function bubbles(){
+          var count = 200;
+          var section = document.querySelector("section");
+          var i=0 ;
+          while(i <count){
+              var bubbles = document.createElement('i');
+              var x = Math.floor(Math.random() * window.innerWidth);
+              var y = Math.floor(Math.random() * window.innerHeight);
+
+              var size = Math.random() * 10;
+              bubbles.style.left = x + "px";
+              bubbles.style.top = y + "px";
+              bubbles.style.width = 1 + size + "px";
+              bubbles.style.height = 1 + size + "px";
+
+              bubbles.style.animationDuration = 5+size+"s";
+              bubbles.style.animationDelay   = -size+"s";
+
+
+              section.appendChild(bubbles);
+              i++;
+          }
+      }
+      bubbles();
+
+    var dem=0;
+
+    function myfunction(x){
+        var x;
+        if(x==1){
+            dem=dem+1;
+        }
+
+        if(dem==1){
+            pic.classList.add("show");
+            marquee_w.classList.add("show");
+        }
+        else if(dem==2)
+        {
+            pic.classList.remove("show");
+            marquee_w.classList.remove("show");
+            dem=0;
+        }
+    }
+  </script>
+</body>
+</html>

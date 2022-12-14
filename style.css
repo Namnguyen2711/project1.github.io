@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+*{
+    margin:0 ;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Satisfy', cursive;
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+section{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: #e1d8d8;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+.present:nth-child(1) {
+    position: absolute;
+    bottom: 120px;
+    width: 100%;
+    height: 100%;
+    
+}
+
+div:nth-child(1) img {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    transform: scale(calc(0.1* var(--y)));
+    animation: present 2s linear infinite;
+    animation-delay: calc(0.2s* var(--y));
+}
+
+.audio{
+    position: absolute;
+    bottom: 0px;
+    left: 60px;
+    opacity: 0.5;
+}
+
+#marquee_w{
+    display: block;
+    opacity: 1;
+    cursor: pointer;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    text-shadow: -2px -2px 5px #fff;
+    filter: drop-shadow(4px 4px 10px #fff);
+    box-shadow: inset 10px 10px 10px rgba(0,0,0,0.05),
+    15px 25px 10px rgba(0,0,0,0.05),
+    15px 20px 20px rgba(0,0,0,0.05),
+    inset -10px -10px 15px rgba(255,255,255,0.9) ;
+    overflow: hidden;
+}
+
+.marquee{
+    position: absolute;
+    display: block;
+    margin: auto auto;
+    white-space: nowrap;
+    min-width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.marquee span {
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+    top: 70px;
+    height: 100%;
+    padding-left: 100%;
+    min-width: 100%;
+    cursor: pointer;
+    font-size: 4em;
+    text-align: center;
+    color: #ff2a2a; 
+    line-height: 140px;
+    text-shadow: -2px -2px 5px #fff;
+    filter: drop-shadow(4px 4px 10px #fff);
+    animation:  marquee 12s linear infinite;
+} 
+
+.marquee2 span{
+    animation-delay: 6s;
+} 
+
+section #marquee_w.show{
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+@keyframes marquee{
+
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(-100%,0);
+    }
+}
+
+
+.button{
+    border: solid 2px #fff;
+    color: #ff2a2a;
+    background: #e1d8d8 ;
+    position: absolute;
+    font-size: 2em;
+    bottom: 10px;
+    left: 0px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;   
+}
+
+#pic{
+    position: relative;
+    width: 200px;
+    height: 300px;
+    transform-style: preserve-3d;
+    opacity: 0;
+    animation: pic 20s linear infinite;
+}
+
+#pic span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--a)*45deg)) translateZ(300px);
+}
+
+#pic span img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+}
+
+#pic.show{
+    opacity: 1;
+    pointer-events: none;
+}
+
+@keyframes pic {
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+
+    }
+    100%{
+        transform: perspective(1000px) rotateY(360deg);
+
+    }
+    
+}
+
+section #marquee-w::before{
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 80px;
+    background: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    filter: blur(2px);
+}
+
+section #marquee-w::after{
+    content: "";
+    position: absolute;
+    top: 50px;
+    left: 45px;
+    background: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    filter: blur(2px);
+}
+
+section i {
+    position: absolute;
+    background:#ff2a2a;
+    border-radius: 50%;
+    animation: animate  linear infinite;
+}
+
+section i:nth-child(even)
+{
+    background: transparent;
+    border:  1px solid #ff2a2a;
+}
+
+@keyframes present{
+
+    0%{
+        top: 0%;
+
+    }
+    100%{
+        top: 100%;
+    }
+
+}
+
+
+@keyframes animate{
+
+    0%{
+        transform: translateY(-2000%);
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+
+    }
+    70%{
+        opacity: 1;
+
+    }
+    90%{
+        opacity: 0.5;
+
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+}
